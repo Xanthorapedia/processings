@@ -15,7 +15,7 @@ public class Drawer extends PApplet {
 	}
 	
 	public void settings() {
-		fluid = new Fluid(W, H, 0.07f, 0.9f, 1E-2f);
+		fluid = new Fluid(W, H, 0.07f, 0.9f, 1E-20f);
 		image = this.createImage(W, H, RGB);
 		size(W, H);
 		for (int i = 269; i < 270; i ++) {
@@ -30,7 +30,7 @@ public class Drawer extends PApplet {
 //			for (int j = 1; j < W + 1; j++)
 //				fluid.vel[0][i * (W + 2) + 0] = 6000;
 //			fluid.vel[0][(i + 1) * (W + 2) + 20] = 500;
-			fluid.forces[0][i * (W + 2) + 1] = 80000;
+			fluid.forces[0][i * (W + 2) + 1] = 800000;
 //			fluid.forces[1][i * (W + 2) + 1] = -800000;
 		}
 //		for (int i = 1; i < H; i ++) {

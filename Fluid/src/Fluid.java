@@ -212,14 +212,14 @@ public class Fluid{
 		for (int i = 0; i < W; i++)
 			for (int j = 0; j < H; j++) {
 				int pos = pixelXY(i, j);
-				float value = (float) Math.sqrt(vel[0][pos] * vel[0][pos] + vel[1][pos] * vel[1][pos]);
-//				float value = density[1][pos]; // pressure
+//				float value = (float) Math.sqrt(vel[0][pos] * vel[0][pos] + vel[1][pos] * vel[1][pos]);
+				float value = density[1][pos]; // pressure
 //				float value = vel[0][pos];
 				value = Math.abs(value);
 //				int gS = (int) Drawer.map(value, 0, 10, 0, 255);
 //				if (value != 0)
 //					System.out.println(value);
-				int gS = (int) ((1 / (1 + Math.exp(-value * 0.05)) - 0.5) * 512);
+				int gS = (int) ((1 / (1 + Math.exp(-value * 0.5)) - 0.5) * 512);
 //				int gS = (int) ((1 / (1 + Math.exp(-value * 0.001))) * 512);
 				gS |= gS << 8;
 				gS |= gS << 16;
